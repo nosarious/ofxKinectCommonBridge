@@ -1,4 +1,4 @@
-Personal insightsto the installation procedure for ofxKinectCommonBridge
+Personal insights to the installation procedure for ofxKinectCommonBridge
 =================
 
 while trying to install this addon for running a personal artwork intending to visualize uttered syllables as pjhonetic sounds or guessed-at-words instead of recognized words, I ran into some issues.
