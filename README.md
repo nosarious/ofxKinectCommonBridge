@@ -1,3 +1,20 @@
+Personal insightsto the installation procedure for ofxKinectCommonBridge
+=================
+
+while trying to install this addon for running a personal artwork intending to visualize uttered syllables as pjhonetic sounds or guessed-at-words instead of recognized words, I ran into some issues.
+
+Rather than just getting it working on my own for my own purposes, I am trying to record and pass along the steps needed to make this work on my system. I would rather use xcode, but the speech systems available on the mac seem focussed on the recognition of words, and I wasnt to print more of the syllables of those words. Hence I need to use windows (8.1, specifically) running in Parallels 9 on Yosemite.
+
+Since this is a clean install, these are the things I noted as needed to run openframeworks and ofxcommonbridge on this system.
+
+1. you will need visual studio 2012 to make this work. openframeworks will not operate under 2013, 2014 or the new 2015. do not download these and install them by accident. it took me quite a while to remove all instances of visual studio community 2015 from my windows setup. Save yourself the hassle.
+2. There are things that are needed to get the speech portion of windows working. This is a very rich environment for speech analysis and recognition, and allows the display of guessed-at words (theoretically, I haven't been able to get it workin,g yet) which is the only reason I needed it. For this purpose, the speech part relies on Active Template LIbrary, an obscure and old 'thing' used in the microsoft programming ide. This is not something which is normally a part of the lower end Visual Studio 2012 systems. That means downloading the Visual Studio 2012 SDK's: http://www.microsoft.com/en-ca/download/details.aspx?id=30668
+3. You will also need openframeworks. http://openframeworks.cc/download/ On the right there is a link for the windows 2012 version. This 'should' work for your purposes. once you have visual studio working, as well as the sdk and openframeowrks, ensure everything is operating properly by building a few of the examples, and some of the addon examples, just to be sure.
+4. try using the project generator, just to be sure everything is working. I had some trouble with the xml openframeworks addon, and of course openCV. check those if you want to be doubly sure.
+5. download ofxKinectCommonBridge. You have two sources for that. One is where I pulled this from, by Joshua Noble: https://github.com/joshuajnoble/ofxKinectCommonBridge The other is from Microsoft itself: https://github.com/MSOpenTech/KinectCommonBridge Personlaly I found a bit more information as to what was needed and required by going throught Joshua Nobles version, but the microsoft one appears to have better examples. Of course, I ams till trying to get it to compile properly. I did find that the JOshua NOble version is better organized for the openframeworks property generator to recognize. Microsot's version just kind of fobbled everything into one folder. Download both, if you like.
+6. create your ofxKinectCommonBridge project using the project generator, and follow the additional steps required to set everything up. At the end is a description for using the property sheets. I tried the first bits, btu I ended up using the property sheets because it was much easier.
+7. create an empty example to test everything links up properly. I'm still working on getting an empty (no facetracking or speech) example to work...
+
 ofxKinectCommonBridge
 =================
 
