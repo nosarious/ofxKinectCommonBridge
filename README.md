@@ -15,6 +15,16 @@ Since this is a clean install, these are the things I noted as needed to run ope
 6. create your ofxKinectCommonBridge project using the project generator, and follow the additional steps in ProjectGenerator Help that are required to set everything up in visual studio. At the end of this section is a description for using the property sheets. I tried the first bits, but I ended up using the property sheets because it was much easier.
 7. create an empty example to test everything links up properly. I'm still working on getting an empty (no facetracking or speech) example to work...
 
+There are some errors which are bound to showup, mostly because: (windows)
+
+the solutions to the compiling errors are not easy to find. You may end up with these errors:
+
+error: warning C4003: not enough actual parameters for macro 'max'
+solution: from here http://stackoverflow.com/questions/6884093/warning-c4003-not-enough-actual-parameters-for-macro-max-visual-studio-2010 Add #define NOMINMAX to the top of Main.h (the main declaration file thingie for openFrameworks itself) I also had to add the #undef min (and #undef max) to the affected files.
+
+error: warning C4250: 'Poco::OutputStreamConverter' (also shows up for Poco::InputStreamConverter'
+http://forum.openframeworks.cc/t/poco-streamconverter-produces-c4250-warning/19910 Follow the suggestion outlined there. There will still be odd things that get added to the build compilation, but there will be no more failures to compile.
+
 ofxKinectCommonBridge
 =================
 
